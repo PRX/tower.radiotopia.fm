@@ -11,7 +11,7 @@ configure do
 end
 
 class App < Sinatra::Base
-  get '/enclosures/urls' do
+  get '/enclosures/list' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
 
@@ -36,7 +36,7 @@ class App < Sinatra::Base
 
       feed.entries.each do |entry|
         if entry.enclosure_type =~ /audio/
-          enclosure_urls << entry.enclosure_url
+          enclosure_urls << [entry.enclosure_url, entry.title, feed.title]
         end
       end
     end
