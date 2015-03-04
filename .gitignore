@@ -1,0 +1,14 @@
+tmp
+coverage
+node_modules
+public
+vendor
+bin
+.DS_Store
+.powder
+src/common/.*
+log
+.bundle
+.assets
+.cache
+npm-debug.log
