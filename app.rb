@@ -4,6 +4,11 @@ require 'bundler'
 Bundler.require
 
 require 'sinatra/base'
+require 'sinatra/cross_origin'
+
+configure do
+  enable :cross_origin
+end
 
 class App < Sinatra::Base
   get '/enclosures/urls' do
