@@ -8,4 +8,6 @@ if memcachier_servers = ENV['MEMCACHIER_SERVERS']
   use Rack::Cache, verbose: true, metastore: cache, entitystore: cache
 end
 
+register Sinatra::CrossOrigin
+
 run App
