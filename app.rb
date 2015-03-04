@@ -12,6 +12,7 @@ end
 
 class App < Sinatra::Base
   get '/enclosures/urls' do
+    headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
 
     feed_urls = [
