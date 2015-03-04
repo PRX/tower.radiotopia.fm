@@ -7,6 +7,8 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
   get '/enclosures/urls' do
+    cache_control :public, max_age: 3600  # 60 mins.
+
     feed_urls = [
       'http://feeds.99percentinvisible.org/99percentinvisible',
       'http://feed.loveandradio.org/loveplusradio',
