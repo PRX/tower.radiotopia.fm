@@ -37,7 +37,7 @@ class App < Sinatra::Base
 
       feed.entries.each do |entry|
         if entry.enclosure_type =~ /audio/
-          enclosure_urls << [entry.enclosure_url, entry.title, feed.title]
+          enclosure_urls << [entry.enclosure_url, entry.title, feed.title, entry.published]
         end
       end
     end
