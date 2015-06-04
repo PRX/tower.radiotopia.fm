@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/PRX/tower.radiotopia.fm/badges/gpa.svg)](https://codeclimate.com/github/PRX/tower.radiotopia.fm)
 [![Dependency Status](https://gemnasium.com/PRX/tower.radiotopia.fm.svg)](https://gemnasium.com/PRX/tower.radiotopia.fm)
 
-This is a lightweight microservice that acts as a content source for [Radiotopia Radio](http://radio.radiotopia.fm). It aggregates certain data of podcast RSS feeds and transposes them into a simple JSON API.
+This is a lightweight microservice that acts as a content source for [Radiotopia Radio](http://radio.radiotopia.fm). It aggregates certain data of podcast RSS feeds and transposes them into a simple [JSON API](http://tower.radiotopia.fm/enclosures/list).
 
 Each podcast feed is fetched and processed to build a list of things like enclosure urls, titles, etc. The resulting list is cached (in memcache, by Dalli) for an hour.
 
