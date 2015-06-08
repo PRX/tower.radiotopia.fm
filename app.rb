@@ -27,6 +27,7 @@ class App < Sinatra::Base
       'http://feeds.feedburner.com/CriminalShow',
       'http://feeds.getmortified.com/MortifiedPod',
       'http://feeds.theallusionist.org/Allusionist',
+      'http://feed.songexploder.net/songexploder',
     ]
 
     enclosure_urls = []
