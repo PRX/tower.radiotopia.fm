@@ -31,7 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   dalli
-  feedjira
+  feedjira (~> 1.6.0)
   json
   rack-cache
   sinatra
