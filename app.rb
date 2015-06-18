@@ -28,6 +28,7 @@ class App < Sinatra::Base
       'http://feeds.getmortified.com/MortifiedPod',
       'http://feeds.theallusionist.org/Allusionist',
       'http://feed.songexploder.net/songexploder',
+      'http://feeds.feedburner.com/thememorypalace',
     ]
 
     enclosure_urls = []
