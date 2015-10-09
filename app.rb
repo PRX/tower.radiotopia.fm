@@ -10,30 +10,30 @@ configure do
   enable :cross_origin
 end
 
+FEED_URLS = [
+  'http://feeds.99percentinvisible.org/99percentinvisible',
+  'http://feed.loveandradio.org/loveplusradio',
+  'http://feeds.kcrw.com/kcrw/sg',
+  'http://feeds.feedburner.com/thetruthapm',
+  'http://feeds.prx.org/toe',
+  'http://www.npr.org/rss/podcast.php?id=510288',
+  'http://feeds.fugitivewaves.org/fugitivewaves',
+  'http://feeds.theheartradio.org/TheHeartRadio',
+  'http://feeds.feedburner.com/CriminalShow',
+  'http://feeds.getmortified.com/MortifiedPod',
+  'http://feeds.theallusionist.org/Allusionist',
+  'http://feed.songexploder.net/songexploder',
+  'http://feeds.feedburner.com/thememorypalace',
+]
+
 class App < Sinatra::Base
   get '/enclosures/list' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
 
-    feed_urls = [
-      'http://feeds.99percentinvisible.org/99percentinvisible',
-      'http://feed.loveandradio.org/loveplusradio',
-      'http://feeds.kcrw.com/kcrw/sg',
-      'http://feeds.feedburner.com/thetruthapm',
-      'http://feeds.prx.org/toe',
-      'http://www.npr.org/rss/podcast.php?id=510288',
-      'http://feeds.fugitivewaves.org/fugitivewaves',
-      'http://feeds.theheartradio.org/TheHeartRadio',
-      'http://feeds.feedburner.com/CriminalShow',
-      'http://feeds.getmortified.com/MortifiedPod',
-      'http://feeds.theallusionist.org/Allusionist',
-      'http://feed.songexploder.net/songexploder',
-      'http://feeds.feedburner.com/thememorypalace',
-    ]
-
     enclosure_urls = []
 
-    Feedjira::Feed.fetch_raw(feed_urls).each do |url, xml|
+    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
       parser = Feedjira::Parser::ITunesRSS
       feed = Feedjira::Feed.parse_with(parser, xml)
 
@@ -46,5 +46,25 @@ class App < Sinatra::Base
 
     content_type :json
     return enclosure_urls.to_json
+  end
+
+  get '/recent' do
+    cache_control :public, max_age: 3600  # 60 mins.
+
+    items = []
+
+    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
+      parser = Feedjira::Parser::ITunesRSS
+      feed = Feedjira::Feed.parse_with(parser, xml)
+
+      feed.entries.each do |entry|
+        if entry.enclosure_type =~ /audio/
+          items << [entry.title, feed.title, entry.published]
+        end
+      end
+    end
+
+    content_type :text
+    return items.sort_by{|item| item[2] }.reverse.map{|item| item.join(', ') }.join("\n")
   end
 end
