@@ -5,7 +5,6 @@ public
 vendor
 bin
 .DS_Store
-.powder
 src/common/.*
 log
 .bundle
