@@ -27,7 +27,6 @@ FEED_URLS = [
 ]
 
 class App < Sinatra::Base
-<<<<<<< HEAD
   get '/best-of/2015' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
@@ -50,7 +49,8 @@ class App < Sinatra::Base
 
     content_type :json
     return enclosure_urls.to_json
-=======
+  end
+
   get '/api/v2/episodes.json' do
     cache_control :public, max_age: 3600  # 60 mins.
 
@@ -75,7 +75,6 @@ class App < Sinatra::Base
 
     content_type :json
     return episodes.to_json
->>>>>>> b676cf0f6761a706022b56a9ec5ff040f7c637e3
   end
 
   get '/enclosures/list' do
