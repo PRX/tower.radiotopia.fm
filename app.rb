@@ -27,6 +27,7 @@ FEED_URLS = [
 ]
 
 class App < Sinatra::Base
+<<<<<<< HEAD
   get '/best-of/2015' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
@@ -49,6 +50,32 @@ class App < Sinatra::Base
 
     content_type :json
     return enclosure_urls.to_json
+=======
+  get '/api/v2/episodes.json' do
+    cache_control :public, max_age: 3600  # 60 mins.
+
+    episodes = []
+
+    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
+      parser = Feedjira::Parser::ITunesRSS
+      feed = Feedjira::Feed.parse_with(parser, xml)
+
+      feed.entries.each do |entry|
+        if entry.enclosure_type =~ /audio/
+          episodes << {
+            show: feed.title,
+            title: entry.title,
+            date: entry.published,
+            audioURL: entry.enclosure_url,
+            guid: entry.id
+          }
+        end
+      end
+    end
+
+    content_type :json
+    return episodes.to_json
+>>>>>>> b676cf0f6761a706022b56a9ec5ff040f7c637e3
   end
 
   get '/enclosures/list' do
