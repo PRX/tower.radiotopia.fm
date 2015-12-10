@@ -27,6 +27,30 @@ FEED_URLS = [
 ]
 
 class App < Sinatra::Base
+  get '/best-of/2015' do
+    headers 'Access-Control-Allow-Origin' => '*'
+    cache_control :public, max_age: 3600  # 60 mins.
+
+    enclosure_urls = [
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","99% Invisible","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Song Exploder","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Criminal","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","The Allusionist","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","The Truth","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Benjamen Walkerâ€™s Theory of Everything","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Fugitive Waves","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Radio Diaries","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Strangers","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","Love + Radio","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","The Heart","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","The Mortified Podcast","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3","Episode 26: Angie","the memory palace","2015-09-11 08:00:00 UTC"],
+    ]
+
+    content_type :json
+    return enclosure_urls.to_json
+  end
+
   get '/enclosures/list' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
