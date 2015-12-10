@@ -32,19 +32,19 @@ class App < Sinatra::Base
     cache_control :public, max_age: 3600  # 60 mins.
 
     enclosure_urls = [
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?1","Episode 26: Angie","99% Invisible","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?2","Episode 26: Angie","Song Exploder","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?3","Episode 26: Angie","Criminal","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?4","Episode 26: Angie","The Allusionist","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?5","Episode 26: Angie","The Truth","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?6","Episode 26: Angie","Benjamen Walkerâ€™s Theory of Everything","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?7","Episode 26: Angie","Fugitive Waves","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?8","Episode 26: Angie","Radio Diaries","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?9","Episode 26: Angie","Strangers","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?10","Episode 26: Angie","Love + Radio","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?11","Episode 26: Angie","The Heart","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?12","Episode 26: Angie","The Mortified Podcast","2015-09-11 08:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?13","Episode 26: Angie","the memory palace","2015-09-11 08:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?1","Episode 26: Angie","99% Invisible","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?2","Episode 26: Angie","Song Exploder","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?3","Episode 26: Angie","Criminal","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?4","Episode 26: Angie","The Allusionist","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?5","Episode 26: Angie","The Truth","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?6","Episode 26: Angie","Benjamen Walkerâ€™s Theory of Everything","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?7","Episode 26: Angie","Fugitive Waves","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?8","Episode 26: Angie","Radio Diaries","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?9","Episode 26: Angie","Strangers","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?10","Episode 26: Angie","Love + Radio","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?11","Episode 26: Angie","The Heart","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?12","Episode 26: Angie","The Mortified Podcast","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?13","Episode 26: Angie","the memory palace","2015-12-10 00:00:00 UTC"],
     ]
 
     content_type :json
