@@ -33,7 +33,7 @@ class App < Sinatra::Base
 
     enclosure_urls = [
       ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?1","tktktktk","99% Invisible","2015-12-10 00:00:00 UTC"],
-      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?2","tktktktk","Song Exploder","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/songexploder/SongExploder28.mp3","The Long Winters","Song Exploder","2015-12-10 00:00:00 UTC"],
       ["http://feedproxy.google.com/~r/CriminalShow/~5/G36cvOunLxY/Episode_27__No_Place_Like_Home.mp3","No Place Like Home","Criminal","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/allusionist/cdn.allusionist.prx.org/wp-content/uploads/Allusionist-25-Toki-Pona.mp3","Toki Pona","The Allusionist","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/thetruthapm/Can_You_Help_Me_Find_My_Mom.mp3","Can You Help Me Find My Mom?","The Truth","2015-12-10 00:00:00 UTC"],
