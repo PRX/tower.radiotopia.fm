@@ -42,7 +42,7 @@ class App < Sinatra::Base
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/radiodiaries/cdn.radiodiaries.prx.org/wp-content/uploads/Retirement-home-podcast.mp3","The Last Place","Radio Diaries","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/strangersnomore/cdn.strangers.prx.org/wp-content/uploads/Strangers58_Unconditional_edit.mp3","Unconditional","Strangers","2015-12-10 00:00:00 UTC"],
       ["http://feed.loveandradio.org/~r/loveplusradio/~5/MDjf0bJO7oo/Love-Radio-The-Living-Room.mp3","The Living Room","Love + Radio","2015-12-10 00:00:00 UTC"],
-      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?11","tktktktk","The Heart","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/theheart/cdn.heart.prx.org/wp-content/uploads/S1E5-The-Hurricane.mp3","The Hurricane","The Heart","2015-12-10 00:00:00 UTC"],
       ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?12","tktktktk","The Mortified Podcast","2015-12-10 00:00:00 UTC"],
       ["http://feeds.thememorypalace.us/~r/TheMemoryPalace/~5/gto4BOhPpNw/thememorypalace.mp3","Nathan Bedford Forrest","the memory palace","2015-12-10 00:00:00 UTC"],
     ]
