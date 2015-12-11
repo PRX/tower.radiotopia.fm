@@ -32,19 +32,19 @@ class App < Sinatra::Base
     cache_control :public, max_age: 3600  # 60 mins.
 
     enclosure_urls = [
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?1","Episode 26: Angie","99% Invisible","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?2","Episode 26: Angie","Song Exploder","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?3","Episode 26: Angie","Criminal","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?4","Episode 26: Angie","The Allusionist","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?5","Episode 26: Angie","The Truth","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?6","Episode 26: Angie","Benjamen Walkerâ€™s Theory of Everything","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?7","Episode 26: Angie","Fugitive Waves","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?8","Episode 26: Angie","Radio Diaries","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?9","Episode 26: Angie","Strangers","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?10","Episode 26: Angie","Love + Radio","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?11","Episode 26: Angie","The Heart","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?12","Episode 26: Angie","The Mortified Podcast","2015-12-10 00:00:00 UTC"],
-      ["http://feedproxy.google.com/~r/CriminalShow/~5/UBGNx5Lz8gE/Epsiode_26__Angie.mp3?13","Episode 26: Angie","the memory palace","2015-12-10 00:00:00 UTC"],
+      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?1","tktktktk","99% Invisible","2015-12-10 00:00:00 UTC"],
+      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?2","tktktktk","Song Exploder","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/CriminalShow/~5/G36cvOunLxY/Episode_27__No_Place_Like_Home.mp3","No Place Like Home","Criminal","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/allusionist/cdn.allusionist.prx.org/wp-content/uploads/Allusionist-25-Toki-Pona.mp3","Toki Pona","The Allusionist","2015-12-10 00:00:00 UTC"],
+      ["http://feedproxy.google.com/~r/thetruthapm/~3/RtZ4TUdDtgw/can-you-help-me-find-my-mom","Can You Help Me Find My Mom?","The Truth","2015-12-10 00:00:00 UTC"],
+      ["http://feeds.prx.org/~r/TOE/~5/dco62LpgGE8/toe57rentdircut.mp3","New York After Rent (Director's Cut)","Benjamen Walkerâ€™s Theory of Everything","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/fugitivewaves/cdn.fugitivewaves.prx.org/wp-content/uploads/FW-28-Wall-Street-Mix-08192015.mp3","Wall Street: San Quentin's Stock Market Wizard","Fugitive Waves","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/radiodiaries/cdn.radiodiaries.prx.org/wp-content/uploads/Retirement-home-podcast.mp3","The Last Place","Radio Diaries","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/strangersnomore/cdn.strangers.prx.org/wp-content/uploads/Strangers58_Unconditional_edit.mp3","Unconditional","Strangers","2015-12-10 00:00:00 UTC"],
+      ["http://feed.loveandradio.org/~r/loveplusradio/~5/MDjf0bJO7oo/Love-Radio-The-Living-Room.mp3","The Living Room","Love + Radio","2015-12-10 00:00:00 UTC"],
+      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?11","tktktktk","The Heart","2015-12-10 00:00:00 UTC"],
+      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?12","tktktktk","The Mortified Podcast","2015-12-10 00:00:00 UTC"],
+      ["http://feeds.thememorypalace.us/~r/TheMemoryPalace/~5/gto4BOhPpNw/thememorypalace.mp3","Nathan Bedford Forrest","the memory palace","2015-12-10 00:00:00 UTC"],
     ]
 
     content_type :json
