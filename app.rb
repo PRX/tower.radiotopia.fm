@@ -32,7 +32,7 @@ class App < Sinatra::Base
     cache_control :public, max_age: 3600  # 60 mins.
 
     enclosure_urls = [
-      ["http://www.ronelmm.com/tones/tones-mp3/static/250hz.mp3?1","tktktktk","99% Invisible","2015-12-10 00:00:00 UTC"],
+      ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/99percentinvisible/cdn.99percentinvisible.org/wp-content/uploads/173-Awareness.mp3","Awareness","99% Invisible","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/songexploder/SongExploder28.mp3","The Long Winters","Song Exploder","2015-12-10 00:00:00 UTC"],
       ["http://feedproxy.google.com/~r/CriminalShow/~5/G36cvOunLxY/Episode_27__No_Place_Like_Home.mp3","No Place Like Home","Criminal","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/allusionist/cdn.allusionist.prx.org/wp-content/uploads/Allusionist-25-Toki-Pona.mp3","Toki Pona","The Allusionist","2015-12-10 00:00:00 UTC"],
