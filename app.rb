@@ -44,7 +44,7 @@ class App < Sinatra::Base
       ["http://feed.loveandradio.org/~r/loveplusradio/~5/MDjf0bJO7oo/Love-Radio-The-Living-Room.mp3","The Living Room","Love + Radio","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/theheart/cdn.heart.prx.org/wp-content/uploads/S1E5-The-Hurricane.mp3","The Hurricane","The Heart","2015-12-10 00:00:00 UTC"],
       ["http://www.podtrac.com/pts/redirect.mp3/media.blubrry.com/mortified/cdn.mortified.prx.org/wp-content/uploads/14_Jenny_Is_My_Boyfriend_Gay.mp3","Jenny: Is My Boyfriend Gay?","The Mortified Podcast","2015-12-10 00:00:00 UTC"],
-      ["http://feeds.thememorypalace.us/~r/TheMemoryPalace/~5/gto4BOhPpNw/thememorypalace.mp3","Nathan Bedford Forrest","the memory palace","2015-12-10 00:00:00 UTC"],
+      ["http://feeds.thememorypalace.us/~r/TheMemoryPalace/~5/gto4BOhPpNw/thememorypalace.mp3","Notes on an Imaginary Plaque...","the memory palace","2015-12-10 00:00:00 UTC"],
     ]
 
     content_type :json
