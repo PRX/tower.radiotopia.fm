@@ -13,20 +13,69 @@ end
 FEED_URLS = [
   'http://feeds.99percentinvisible.org/99percentinvisible',
   'http://feed.loveandradio.org/loveplusradio',
-  'http://feeds.kcrw.com/kcrw/sg',
+  'http://feeds.strangersnomore.org/StrangersNoMore',
   'http://feeds.feedburner.com/thetruthapm',
   'http://feeds.prx.org/toe',
-  'http://www.npr.org/rss/podcast.php?id=510288',
+  'http://feed.radiodiaries.org/radio-diaries',
   'http://feeds.fugitivewaves.org/fugitivewaves',
   'http://feeds.theheartradio.org/TheHeartRadio',
   'http://feeds.feedburner.com/CriminalShow',
   'http://feeds.getmortified.com/MortifiedPod',
   'http://feeds.theallusionist.org/Allusionist',
   'http://feed.songexploder.net/songexploder',
-  'http://feeds.feedburner.com/thememorypalace',
+  'http://feeds.thememorypalace.us/thememorypalace',
 ]
 
 class App < Sinatra::Base
+  # This is being used by radio.radiotopia.fm
+  get '/api/v1/episodes.json' do
+    headers 'Access-Control-Allow-Origin' => '*'
+    cache_control :public, max_age: 3600  # 60 mins.
+
+    episodes = []
+
+    FEED_URLS.each do |url|
+      rss = Faraday.new.get(url).body
+      feed = Feedjira::Parser::Podcast.parse(rss)
+
+      feed.items.each do |item|
+        if item.enclosure.type =~ /audio/
+          episodes << [item.enclosure.url, item.title, feed.title, item.pub_date, item.guid.guid]
+        end
+      end
+    end
+
+    content_type :json
+    return episodes.to_json
+  end
+
+  # This is being used by the Radiotopia Radio tvOS app
+  get '/api/v2/episodes.json' do
+    cache_control :public, max_age: 3600  # 60 mins.
+
+    episodes = []
+
+    FEED_URLS.each do |url|
+      rss = Faraday.new.get(url).body
+      feed = Feedjira::Parser::Podcast.parse(rss)
+
+      feed.items.each do |item|
+        if item.enclosure.type =~ /audio/
+          episodes << {
+            show: feed.title,
+            title: item.title,
+            date: item.pub_date.utc,
+            audioURL: item.enclosure.url,
+            guid: item.guid.guid
+          }
+        end
+      end
+    end
+
+    content_type :json
+    return episodes.to_json
+  end
+
   get '/best-of/2015' do
     headers 'Access-Control-Allow-Origin' => '*'
     cache_control :public, max_age: 3600  # 60 mins.
@@ -51,65 +100,18 @@ class App < Sinatra::Base
     return enclosure_urls.to_json
   end
 
-  get '/api/v2/episodes.json' do
-    cache_control :public, max_age: 3600  # 60 mins.
-
-    episodes = []
-
-    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
-      parser = Feedjira::Parser::ITunesRSS
-      feed = Feedjira::Feed.parse_with(parser, xml)
-
-      feed.entries.each do |entry|
-        if entry.enclosure_type =~ /audio/
-          episodes << {
-            show: feed.title,
-            title: entry.title,
-            date: entry.published,
-            audioURL: entry.enclosure_url,
-            guid: entry.id
-          }
-        end
-      end
-    end
-
-    content_type :json
-    return episodes.to_json
-  end
-
-  get '/enclosures/list' do
-    headers 'Access-Control-Allow-Origin' => '*'
-    cache_control :public, max_age: 3600  # 60 mins.
-
-    enclosure_urls = []
-
-    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
-      parser = Feedjira::Parser::ITunesRSS
-      feed = Feedjira::Feed.parse_with(parser, xml)
-
-      feed.entries.each do |entry|
-        if entry.enclosure_type =~ /audio/
-          enclosure_urls << [entry.enclosure_url, entry.title, feed.title, entry.published]
-        end
-      end
-    end
-
-    content_type :json
-    return enclosure_urls.to_json
-  end
-
   get '/recent' do
     cache_control :public, max_age: 3600  # 60 mins.
 
     items = []
 
-    Feedjira::Feed.fetch_raw(FEED_URLS).each do |url, xml|
-      parser = Feedjira::Parser::ITunesRSS
-      feed = Feedjira::Feed.parse_with(parser, xml)
+    FEED_URLS.each do |url|
+      rss = Faraday.new.get(url).body
+      feed = Feedjira::Parser::Podcast.parse(rss)
 
-      feed.entries.each do |entry|
-        if entry.enclosure_type =~ /audio/
-          items << [entry.title, feed.title, entry.published]
+      feed.items.each do |item|
+        if item.enclosure.type =~ /audio/
+          items << [item.title, feed.title, item.pub_date]
         end
       end
     end

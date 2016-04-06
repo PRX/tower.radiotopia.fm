@@ -10,4 +10,4 @@ gem 'json'
 gem 'rack-cache'
 gem 'dalli'
 
-gem 'feedjira', '~>1.6.0'
+gem 'feedjira-podcast'
