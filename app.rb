@@ -24,6 +24,7 @@ FEED_URLS = [
   'http://feeds.theallusionist.org/Allusionist',
   'http://feed.songexploder.net/songexploder',
   'http://feeds.thememorypalace.us/thememorypalace',
+  'http://feeds.millennialpodcast.org/millennialpodcast',
 ]
 
 class App < Sinatra::Base
