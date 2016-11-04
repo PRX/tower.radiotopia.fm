@@ -25,6 +25,8 @@ FEED_URLS = [
   'http://feed.songexploder.net/songexploder',
   'http://feeds.thememorypalace.us/thememorypalace',
   'http://feeds.millennialpodcast.org/millennialpodcast',
+  'http://feeds.thebuglepodcast.com/thebuglefeed',
+  'http://feeds.thewestwingweekly.com/westwingweekly'
 ]
 
 class App < Sinatra::Base
