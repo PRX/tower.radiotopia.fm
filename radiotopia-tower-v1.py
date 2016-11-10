@@ -1,3 +1,11 @@
+# The endpoint for this service should be
+# /api/v1/episodes.json
+#
+# It return an array of arrays
+# eg [[], [], []]
+# Each child array is of the format
+# [audio URL, episode title, show title, pub date (YYYY-MM-DD HH:MM:SS), GUID]
+
 import urllib2
 import rfc822
 from datetime import datetime
