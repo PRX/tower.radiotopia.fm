@@ -7,6 +7,7 @@
 # [audio URL, episode title, show title, pub date (YYYY-MM-DD HH:MM:SS), GUID]
 
 import urllib2
+import socket
 import rfc822
 from datetime import datetime
 from xml.etree import cElementTree as ET
@@ -23,7 +24,7 @@ FEED_URLS = [
     'http://feeds.feedburner.com/CriminalShow',
     'http://feeds.getmortified.com/MortifiedPod',
     'http://feeds.theallusionist.org/Allusionist',
-    'http://feed.songexploder.net/songexploder',
+    'http://feed.songexploder.net/SongExploder',
     'http://feeds.thememorypalace.us/thememorypalace',
     'http://feeds.millennialpodcast.org/millennialpodcast',
     'http://feeds.thebuglepodcast.com/thebuglefeed',
@@ -34,27 +35,36 @@ def lambda_handler(event, context):
     episodes = []
 
     for url in FEED_URLS:
-        rss = ET.fromstring(urllib2.urlopen(url).read())
-        channel = rss.find('channel')
-        showtitle = channel.find('title').text
+        try:
+            print "Requesting feed: %s" % url
+            rss = ET.fromstring(urllib2.urlopen(url, timeout=3).read())
+        except urllib2.HTTPError:
+            print "Error HTTPError opening %s." % url
+        except urllib2.URLError:
+            print "Error URLError opening %s." % url
+        except socket.timeout:
+            print "Error socket.timeout %s." % url
+        else:
+            channel = rss.find('channel')
+            showtitle = channel.find('title').text
 
-        for item in channel.findall('item'):
-            enc = item.find('enclosure')
-            encurl = enc.attrib['url']
-            enctype = enc.attrib['type']
+            for item in channel.findall('item'):
+                enc = item.find('enclosure')
+                encurl = enc.attrib['url']
+                enctype = enc.attrib['type']
 
-            if enctype.find('audio') != -1:
-                title = item.find('title').text
+                if enctype.find('audio') != -1:
+                    title = item.find('title').text
 
-                datetext = item.find('pubDate').text
-                datetuple = rfc822.parsedate_tz(datetext)
-                datets = rfc822.mktime_tz(datetuple)
-                pubdate = datetime.fromtimestamp(datets)
-                pubdatestr = pubdate.strftime('%Y-%m-%d %H:%M:%S UTC')
+                    datetext = item.find('pubDate').text
+                    datetuple = rfc822.parsedate_tz(datetext)
+                    datets = rfc822.mktime_tz(datetuple)
+                    pubdate = datetime.fromtimestamp(datets)
+                    pubdatestr = pubdate.strftime('%Y-%m-%d %H:%M:%S UTC')
 
-                guid = item.find('guid').text
+                    guid = item.find('guid').text
 
-                episode = [encurl, title, showtitle, pubdatestr, guid]
-                episodes.append(episode)
+                    episode = [encurl, title, showtitle, pubdatestr, guid]
+                    episodes.append(episode)
 
     return episodes
