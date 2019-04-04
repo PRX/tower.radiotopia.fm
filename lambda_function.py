@@ -5,7 +5,8 @@
 # eg [{}, {}, {}]
 # Each object is of the format
 # {'show': show title, 'title': episode title,
-#   'date': pub date (YYYY-MM-DD HH:MM:SS), 'audioURL': audio URL, 'guid': GUID}
+#   'date': pub date (YYYY-MM-DD HH:MM:SS),
+#   'audioURL': audio URL, 'guid': GUID}
 
 import urllib2
 import socket
@@ -14,26 +15,46 @@ from datetime import datetime
 from xml.etree import cElementTree as ET
 
 FEED_URLS = [
+    # 99pi
     'http://feeds.99percentinvisible.org/99percentinvisible',
-    'http://feed.loveandradio.org/loveplusradio',
-    'http://feeds.strangersnomore.org/StrangersNoMore',
-    'http://feeds.thetruthpodcast.com/thetruthapm',
-    'http://feeds.prx.org/toe',
-    'http://feed.radiodiaries.org/radio-diaries',
-    'http://feeds.fugitivewaves.org/fugitivewaves',
-    'http://feeds.theheartradio.org/TheHeartRadio',
-    'http://feeds.thisiscriminal.com/CriminalShow',
-    'http://feeds.getmortified.com/MortifiedPod',
+    # Allusionist
     'http://feeds.theallusionist.org/Allusionist',
-    'http://feed.songexploder.net/SongExploder',
-    'http://feeds.thememorypalace.us/thememorypalace',
-    'http://feeds.millennialpodcast.org/millennialpodcast',
-    'http://feeds.thewestwingweekly.com/westwingweekly',
-    'http://feeds.thebuglepodcast.com/thebuglefeed',
-    'http://feeds.trumpconlaw.com/TrumpConLaw',
+    # Criminal
+    'http://feeds.thisiscriminal.com/CriminalShow',
+    # Ear Hustle
     'http://feeds.earhustlesq.com/earhustlesq',
-    'http://feeds.radiotopia.fm/radiotopia-showcase'
+    # Everything is Alive
+    'http://feeds.everythingisalive.com/everythingisalive',
+    # The Heart
+    'http://feeds.theheartradio.org/TheHeartRadio',
+    # Kitchen Sisters
+    'http://feeds.fugitivewaves.org/fugitivewaves',
+    # Memory Palace
+    'http://feeds.thememorypalace.us/thememorypalace',
+    # Millennial
+    'http://feeds.millennialpodcast.org/millennialpodcast',
+    # Mortified
+    'http://feeds.getmortified.com/MortifiedPod',
+    # Radio Diaries
+    'http://feed.radiodiaries.org/radio-diaries',
+    # Showcase
+    'http://feeds.radiotopia.fm/radiotopia-showcase',
+    # Song Exploder
+    'http://feed.songexploder.net/SongExploder',
+    # This is Love
+    'http://feeds.thisiscriminal.com/thisislovepodcast',
+    # Theory of Everything
+    'http://feeds.prx.org/toe',
+    # The Truth
+    'http://feeds.thetruthpodcast.com/thetruthapm',
+    # West Wing Weekly
+    'http://feeds.thewestwingweekly.com/westwingweekly',
+    # Trump Con Law
+    'http://feeds.trumpconlaw.com/TrumpConLaw',
+    # ZigZag
+    'http://feeds.stableg.com/zigzagpodcast'
 ]
+
 
 def lambda_handler(event, context):
     episodes = []
