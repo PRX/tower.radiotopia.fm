@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER PRX <sysadmin@prx.org>
+LABEL maintainer="PRX <sysadmin@prx.org>"
 LABEL org.prx.lambda="true"
 
 WORKDIR /app
