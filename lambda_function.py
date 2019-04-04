@@ -5,7 +5,8 @@
 # eg [{}, {}, {}]
 # Each object is of the format
 # {'show': show title, 'title': episode title,
-#   'date': pub date (YYYY-MM-DD HH:MM:SS), 'audioURL': audio URL, 'guid': GUID}
+#   'date': pub date (YYYY-MM-DD HH:MM:SS),
+#   'audioURL': audio URL, 'guid': GUID}
 
 import urllib2
 import socket
