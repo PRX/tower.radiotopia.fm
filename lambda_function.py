@@ -13,6 +13,7 @@ import socket
 import rfc822
 from datetime import datetime
 from xml.etree import cElementTree as ET
+import json
 
 FEED_URLS = [
     # 99pi
@@ -97,4 +98,10 @@ def lambda_handler(event, context):
                     }
                     episodes.append(episode)
 
-    return episodes
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'application/json'
+        },
+        'body': json.dumps(episodes)
+    }
