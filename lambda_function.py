@@ -54,6 +54,10 @@ FEED_URLS = [
     'http://feeds.trumpconlaw.com/TrumpConLaw',
     # ZigZag
     'http://feeds.stableg.com/zigzagpodcast'
+    # Adultish
+    'https://adultish.yr.media/'
+    # Passenger List
+    'https://feed.passengerlist.org/'
 ]
 
 
