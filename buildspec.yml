@@ -5,6 +5,8 @@ env:
     PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "RadiotopiaTowerLambdaCodeS3ObjectVersion"
 phases:
   build:
+    runtime-versions:
+      docker: 18
     commands:
       - "cd $(ls -d */|head -n 1)"
       - "docker build ."
