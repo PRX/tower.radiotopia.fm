@@ -4,9 +4,10 @@ env:
     PRX_LAMBDA_CODE_S3_KEY: "lambda/PRX-tower.radiotopia.fm.zip"
     PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "RadiotopiaTowerLambdaCodeS3ObjectVersion"
 phases:
-  build:
+  install:
     runtime-versions:
       docker: 18
+  build:
     commands:
       - "cd $(ls -d */|head -n 1)"
       - "docker build ."
