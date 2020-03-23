@@ -8,5 +8,5 @@ WORKDIR /app
 RUN apk add zip
 
 RUN mkdir -p /.prxci
-ADD lambda_function.py .
+ADD index.js .
 RUN zip -rq /.prxci/build.zip .
