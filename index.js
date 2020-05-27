@@ -4,7 +4,7 @@ const parseXml = require('parse-xml');
 
 const FEED_URLS = [
   // 99pi
-  'http://feeds.99percentinvisible.org/99percentinvisible',
+  'https://feeds.99percentinvisible.org/99percentinvisible',
   // Adultish
   'https://adultish.yr.media/',
   // Allusionist
