@@ -10,7 +10,7 @@ const FEED_URLS = [
   // Allusionist
   'http://feeds.theallusionist.org/Allusionist',
   // Criminal
-  'http://feeds.thisiscriminal.com/CriminalShow',
+  'https://feeds.thisiscriminal.com/CriminalShow',
   // Ear Hustle
   'http://feeds.earhustlesq.com/earhustlesq',
   // Everything is Alive
@@ -42,7 +42,7 @@ const FEED_URLS = [
   // This Day
   'https://thisday.feed.electionhistory.show/',
   // This is Love
-  'http://feeds.thisiscriminal.com/thisislovepodcast',
+  'https://feeds.thisiscriminal.com/thisislovepodcast',
   // Theory of Everything
   'http://feeds.prx.org/toe',
   // The Truth
