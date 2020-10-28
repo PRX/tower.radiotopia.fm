@@ -7,8 +7,8 @@ const FEED_URLS = [
   'https://feeds.99percentinvisible.org/99percentinvisible',
   // Adultish
   'https://adultish.yr.media/',
-  // Allusionist
-  'http://feeds.theallusionist.org/Allusionist',
+  // Appearances
+  'http://feeds.theheart.org/appearancespodcast',
   // Criminal
   'https://feeds.thisiscriminal.com/CriminalShow',
   // Ear Hustle
@@ -17,6 +17,8 @@ const FEED_URLS = [
   'http://feeds.everythingisalive.com/everythingisalive',
   // The Heart
   'http://feeds.theheartradio.org/TheHeartRadio',
+  // Home Cooking
+  'http://feeds.feedburner.com/homecookingshow',
   // Kitchen Sister
   'http://feeds.fugitivewaves.org/fugitivewaves',
   // Over the Road
@@ -31,6 +33,8 @@ const FEED_URLS = [
   'https://feed.partners.show/',
   // Passenger List
   'https://feed.passengerlist.org/',
+  // PRAM
+  'http://feeds.feedburner.com/PhoebeReadsAMystery',
   // Radio Diaries
   'http://feed.radiodiaries.org/radio-diaries',
   // Radiotopia Plus
@@ -49,6 +53,8 @@ const FEED_URLS = [
   'http://feeds.thetruthpodcast.com/thetruthapm',
   // West Wing Weekly
   'http://feeds.thewestwingweekly.com/westwingweekly',
+  // Wild Thing
+  'http://feeds.feedburner.com/AWildThingMoment',
   // Trump Con Law
   'http://feeds.trumpconlaw.com/TrumpConLaw',
 ];
