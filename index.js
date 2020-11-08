@@ -20,7 +20,7 @@ const FEED_URLS = [
   // Home Cooking
   'http://feeds.feedburner.com/homecookingshow',
   // Kitchen Sister
-  'http://feeds.fugitivewaves.org/fugitivewaves',
+  'https://feeds.fugitivewaves.org/fugitivewaves',
   // Over the Road
   'https://feed.overtheroad.fm/',
   // Memory Palace
