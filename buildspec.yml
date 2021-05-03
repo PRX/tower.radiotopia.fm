@@ -1,8 +1,7 @@
 version: 0.2
 env:
   variables:
-    PRX_LAMBDA_CODE_S3_KEY: "lambda/PRX-tower.radiotopia.fm.zip"
-    PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "RadiotopiaTowerLambdaCodeS3ObjectVersion"
+    PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "RadiotopiaTowerLambdaCodeS3ObjectKey"
 phases:
   install:
     runtime-versions:
