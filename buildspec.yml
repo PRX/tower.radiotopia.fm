@@ -2,6 +2,9 @@ version: 0.2
 env:
   variables:
     PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "RadiotopiaTowerLambdaCodeS3ObjectKey"
+  parameter-store:
+    DOCKERHUB_USERNAME: "/prx/DOCKERHUB_USERNAME"
+    DOCKERHUB_PASSWORD: "/prx/DOCKERHUB_PASSWORD"
 phases:
   install:
     runtime-versions:
