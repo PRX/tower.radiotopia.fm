@@ -3,8 +3,8 @@ const https = require('https');
 const parseXml = require('parse-xml');
 
 const FEED_URLS = [
-  // 99pi
-  'https://feeds.99percentinvisible.org/99percentinvisible',
+  // According to Need
+  'https://feeds.99percentinvisible.org/accordingtoneed',
   // Adultish
   'https://adultish.yr.media/',
   // Appearances
@@ -19,16 +19,18 @@ const FEED_URLS = [
   'http://feeds.theheartradio.org/TheHeartRadio',
   // Home Cooking
   'http://feeds.feedburner.com/homecookingshow',
+  // Judas and the Black Messiah
+  'https://feeds.feedburner.com/JudasAndTheBlackMessiahPodcast',
   // Kitchen Sister
   'https://feeds.fugitivewaves.org/fugitivewaves',
-  // Over the Road
-  'https://feed.overtheroad.fm/',
   // Memory Palace
   'http://feeds.thememorypalace.us/thememorypalace',
   // Millennial
   'http://feeds.millennialpodcast.org/millennialpodcast',
   // Mortified
   'http://feeds.getmortified.com/MortifiedPod',
+  // Over the Road
+  'https://feed.overtheroad.fm/',
   // Partners
   'https://feed.partners.show/',
   // Passenger List
@@ -55,8 +57,6 @@ const FEED_URLS = [
   'http://feeds.thewestwingweekly.com/westwingweekly',
   // Wild Thing
   'http://feeds.feedburner.com/AWildThingMoment',
-  // Trump Con Law
-  'http://feeds.trumpconlaw.com/TrumpConLaw',
 ];
 
 function dateFmt(pubDate) {
