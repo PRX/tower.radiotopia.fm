@@ -5,6 +5,9 @@ env:
   parameter-store:
     DOCKERHUB_USERNAME: "/prx/DOCKERHUB_USERNAME"
     DOCKERHUB_PASSWORD: "/prx/DOCKERHUB_PASSWORD"
+  exported-variables:
+    - PRX_LAMBDA_CODE_CONFIG_PARAMETERS
+    - PRX_LAMBDA_CODE_CONFIG_VALUE
 phases:
   install:
     runtime-versions:
