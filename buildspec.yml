@@ -12,6 +12,10 @@ phases:
   install:
     runtime-versions:
       docker: 18
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      - echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin
   build:
     commands:
       - "cd $(ls -d */|head -n 1)"
