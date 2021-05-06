@@ -24,5 +24,4 @@ phases:
     commands:
       - 'curl -sO "https://raw.githubusercontent.com/PRX/Infrastructure/master/ci/utility/post_build.sh"'
       - chmod +x post_build.sh
-      - source ./post_build.sh
-      - export PRX_LAMBDA_CODE_CONFIG_VALUE="test"
+      - . ./post_build.sh
