@@ -3,8 +3,6 @@ const https = require('https');
 const parseXml = require('parse-xml');
 
 const FEED_URLS = [
-  // According to Need
-  'https://feeds.99percentinvisible.org/accordingtoneed',
   // Adultish
   'https://adultish.yr.media/',
   // Appearances
@@ -51,6 +49,8 @@ const FEED_URLS = [
   'https://feeds.thisiscriminal.com/thisislovepodcast',
   // Theory of Everything
   'http://feeds.prx.org/toe',
+  // The Stoop
+  'https://feed.thestoop.org/',
   // The Truth
   'http://feeds.thetruthpodcast.com/thetruthapm',
   // West Wing Weekly
