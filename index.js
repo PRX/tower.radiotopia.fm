@@ -7,8 +7,6 @@ const FEED_URLS = [
   'https://adultish.yr.media/',
   // Appearances
   'http://feeds.theheart.org/appearancespodcast',
-  // Criminal
-  'https://feeds.thisiscriminal.com/CriminalShow',
   // Ear Hustle
   'http://feeds.earhustlesq.com/earhustlesq',
   // Everything is Alive
@@ -19,7 +17,7 @@ const FEED_URLS = [
   'http://feeds.feedburner.com/homecookingshow',
   // Judas and the Black Messiah
   'https://feeds.feedburner.com/JudasAndTheBlackMessiahPodcast',
-  // Kitchen Sister
+  // Kitchen Sisters
   'https://feeds.fugitivewaves.org/fugitivewaves',
   // Memory Palace
   'http://feeds.thememorypalace.us/thememorypalace',
@@ -45,8 +43,6 @@ const FEED_URLS = [
   'http://feed.songexploder.net/SongExploder',
   // This Day
   'https://thisday.feed.electionhistory.show/',
-  // This is Love
-  'https://feeds.thisiscriminal.com/thisislovepodcast',
   // Theory of Everything
   'http://feeds.prx.org/toe',
   // The Stoop
@@ -55,8 +51,6 @@ const FEED_URLS = [
   'http://feeds.thetruthpodcast.com/thetruthapm',
   // West Wing Weekly
   'http://feeds.thewestwingweekly.com/westwingweekly',
-  // Wild Thing
-  'http://feeds.feedburner.com/AWildThingMoment',
 ];
 
 function dateFmt(pubDate) {
