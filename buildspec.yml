@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/Dovetail-Metrics_Export/pkg/s3-object-key
+    PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/Radiotopia-Tower/pkg/s3-object-key
   parameter-store:
     DOCKERHUB_USERNAME: /prx/DOCKERHUB_USERNAME
     DOCKERHUB_PASSWORD: /prx/DOCKERHUB_PASSWORD
