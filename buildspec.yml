@@ -1,17 +1,14 @@
 version: 0.2
 env:
   variables:
-    PRX_LAMBDA_CODE_CONFIG_PARAMETERS: RadiotopiaTowerLambdaCodeS3ObjectKey
+    PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/Dovetail-Metrics_Export/pkg/s3-object-key
   parameter-store:
     DOCKERHUB_USERNAME: /prx/DOCKERHUB_USERNAME
     DOCKERHUB_PASSWORD: /prx/DOCKERHUB_PASSWORD
   exported-variables:
-    - PRX_LAMBDA_CODE_CONFIG_PARAMETERS
-    - PRX_LAMBDA_CODE_CONFIG_VALUE
+    - PRX_SPIRE_S3_PKG_PARAMETERS
+    - LAMBDA_ZIP
 phases:
-  install:
-    runtime-versions:
-      docker: 18
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
@@ -21,6 +18,6 @@ phases:
       - docker build .
   post_build:
     commands:
-      - 'curl -sO "https://raw.githubusercontent.com/PRX/Infrastructure/master/ci/utility/post_build.sh"'
+      - curl -sO "https://raw.githubusercontent.com/PRX/Infrastructure/main/ci/utility/post_build.sh"
       - chmod +x post_build.sh
       - . ./post_build.sh
