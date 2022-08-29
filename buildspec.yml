@@ -8,6 +8,7 @@ env:
   exported-variables:
     - PRX_SPIRE_S3_PKG_PARAMETERS
     - LAMBDA_ZIP
+    - LAMBDA_LAYER_ZIP
 phases:
   pre_build:
     commands:
