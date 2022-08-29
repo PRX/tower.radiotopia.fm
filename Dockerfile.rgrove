@@ -1,0 +1,18 @@
+FROM public.ecr.aws/lambda/nodejs:14
+
+LABEL maintainer="PRX <sysadmin@prx.org>"
+LABEL org.prx.spire.publish.s3="LAMBDA_LAYER_ZIP"
+
+WORKDIR /app
+
+ENTRYPOINT [ "npm", "run" ]
+CMD [ "test" ]
+
+RUN yum install -y zip
+RUN mkdir -p ./nodejs
+RUN npm install --prefix ./nodejs @rgrove/parse-xml
+
+# This zip file is what will be deployed as the Lambda layer.
+# Add any necessary files to it.
+RUN mkdir --parents /.prxci
+RUN zip --quiet --recurse-paths /.prxci/build.zip ./nodejs

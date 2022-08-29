@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/Radiotopia-Tower/pkg/s3-object-key
+    PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/Radiotopia-Tower/pkg/s3-object-key;LAMBDA_LAYER_ZIP=/prx/stag/Spire/Radiotopia-Tower/xml-parse-layer/pkg/s3-object-key
   parameter-store:
     DOCKERHUB_USERNAME: /prx/DOCKERHUB_USERNAME
     DOCKERHUB_PASSWORD: /prx/DOCKERHUB_PASSWORD
@@ -16,6 +16,7 @@ phases:
   build:
     commands:
       - docker build .
+      - docker build -f Dockerfile.rgrove .
   post_build:
     commands:
       - curl -sO "https://raw.githubusercontent.com/PRX/Infrastructure/main/ci/utility/post_build.sh"
