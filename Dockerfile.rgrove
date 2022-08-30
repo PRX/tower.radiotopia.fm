@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM mhart/alpine-node:16
 
 LABEL maintainer="PRX <sysadmin@prx.org>"
 LABEL org.prx.spire.publish.s3="LAMBDA_LAYER_ZIP"
