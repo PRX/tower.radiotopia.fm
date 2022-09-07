@@ -40,7 +40,7 @@ const FEED_URLS = [
   // Showcase
   'http://feeds.radiotopia.fm/radiotopia-showcase',
   // Song Exploder
-  'http://feed.songexploder.net/SongExploder',
+  'https://feed.songexploder.net/SongExploder',
   // This Day
   'https://thisday.feed.electionhistory.show/',
   // Theory of Everything
