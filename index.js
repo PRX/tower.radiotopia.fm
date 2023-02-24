@@ -7,6 +7,12 @@ const FEED_URLS = [
   'https://adultish.yr.media/',
   // Appearances
   'http://feeds.theheart.org/appearancespodcast',
+  // Articles of Interest
+  'https://feed.articlesofinterest.club/',
+  // Benjamen Walker's Theory of Everything
+  'http://feeds.prx.org/toe',
+  // Canción Exploder
+  'https://feeds.megaphone.fm/cancion-exploder',
   // Ear Hustle
   'http://feeds.earhustlesq.com/earhustlesq',
   // Everything is Alive
@@ -14,7 +20,9 @@ const FEED_URLS = [
   // The Heart
   'http://feeds.theheartradio.org/TheHeartRadio',
   // Home Cooking
-  'http://feeds.feedburner.com/homecookingshow',
+  'https://feeds.feedburner.com/homecookingshow',
+  // ITSBPS
+  'https://feed.itsbps.condos/',
   // Judas and the Black Messiah
   'https://feeds.feedburner.com/JudasAndTheBlackMessiahPodcast',
   // Kitchen Sisters
@@ -25,26 +33,24 @@ const FEED_URLS = [
   'http://feeds.millennialpodcast.org/millennialpodcast',
   // Mortified
   'http://feeds.getmortified.com/MortifiedPod',
+  // Mumbai Crime
+  'https://mumbaicrime.feeds.goldhawkproductions.com/',
+  // Oprahdemics
+  'https://podcast.oprahdemics.com/',
   // Over the Road
   'https://feed.overtheroad.fm/',
   // Partners
   'https://feed.partners.show/',
   // Passenger List
   'https://feed.passengerlist.org/',
-  // PRAM
-  'http://feeds.feedburner.com/PhoebeReadsAMystery',
   // Radio Diaries
   'http://feed.radiodiaries.org/radio-diaries',
-  // Radiotopia Plus
-  'https://plus.radiotopia.fm/',
   // Showcase
   'http://feeds.radiotopia.fm/radiotopia-showcase',
   // Song Exploder
   'https://feed.songexploder.net/SongExploder',
   // This Day
   'https://thisday.feed.electionhistory.show/',
-  // Theory of Everything
-  'http://feeds.prx.org/toe',
   // The Stoop
   'https://feed.thestoop.org/',
   // The Truth
