@@ -1,6 +1,6 @@
 const http = require('http');
 const https = require('https');
-const parseXml = require('@rgrove/parse-xml');
+const { parseXml } = require('@rgrove/parse-xml');
 
 const FEED_URLS = [
   // Adultish
