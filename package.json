@@ -2,6 +2,9 @@
   "name": "tower.radiotopia.fm",
   "version": "1.0.0",
   "license": "AGPL-3.0",
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/PRX/tower.radiotopia.fm.git"
