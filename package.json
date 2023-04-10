@@ -1,0 +1,25 @@
+{
+  "name": "tower.radiotopia.fm",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PRX/tower.radiotopia.fm.git"
+  },
+  "dependencies": {
+    "@rgrove/parse-xml": "*"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-hooks": "*",
+    "prettier": "*",
+    "typescript": "*",
+    "@types/node": "*"
+  }
+}
