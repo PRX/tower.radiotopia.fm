@@ -12,6 +12,6 @@ jobs:
           node-version: 18
           cache: yarn
       - run: yarn install
-      - run: npm exec prettier -- --check "**/*.{js,json,yml}"
       - run: npm exec eslint -- "**/*.js"
+      - run: npm exec prettier -- --check "**/*.{json,yml}"
       - run: npm exec tsc
